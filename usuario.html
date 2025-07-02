@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Tecno Chiguires</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container-form {
+      background: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    .status-pending {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      border: 2px solid #f39c12;
+    }
+    .status-approved {
+      background: linear-gradient(135deg, #d4f4dd 0%, #a8e6cf 100%);
+      border: 2px solid #27ae60;
+    }
+    .success-icon {
+      font-size: 4rem;
+      color: #27ae60;
+      margin: 20px 0;
+    }
+    .pending-icon {
+      font-size: 4rem;
+      color: #f39c12;
+      margin: 20px 0;
+    }
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">Tecno Chiguires</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">🏠 Inicio</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="portafolio.html">💼 Portafolio</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="sobre_nosotros.html">👥 Sobre Nosotros</a></li>
+        <li class="nav-item">
+          <button id="authBtn" class="btn btn-warning fw-semibold ms-md-3">Registro/Inicio Sesión</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Loading State -->
+<div id="loadingState" class="container-form text-center">
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
+  <p class="mt-3">Cargando tu información...</p>
+</div>
+
+<!-- Error State -->
+<div id="errorState" class="container-form text-center" style="display: none;">
+  <div class="alert alert-danger">
+    <h4>Error al cargar la información</h4>
+    <p id="errorMessage">Ha ocurrido un error inesperado.</p>
+    <button class="btn btn-primary" onclick="location.reload()">Intentar de nuevo</button>
+  </div>
+</div>
+
+<!-- User Dashboard -->
+<div id="userDashboard" class="container-form" style="display: none;">
+  <div class="position-relative">
+    <button id="logoutBtn" class="btn btn-outline-danger logout-btn">Cerrar Sesión</button>
+    
+    <!-- Status Container - Will be populated dynamically -->
+    <div id="statusContainer"></div>
+    
+    <!-- User Data Container -->
+    <div id="userDataContainer" class="mt-4">
+      <h4 class="text-primary mb-3">Información Registrada</h4>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h6 class="card-title text-muted">Datos Personales</h6>
+              <p class="mb-1"><strong>Nombre:</strong> <span id="userName"></span></p>
+              <p class="mb-1"><strong>Email:</strong> <span id="userEmail"></span></p>
+              <p class="mb-0"><strong>Teléfono:</strong> <span id="userPhone"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h6 class="card-title text-muted">Información Técnica</h6>
+              <p class="mb-1"><strong>Especialidad:</strong> <span id="userSpecialty"></span></p>
+              <p class="mb-0"><strong>Experiencia:</strong> <span id="userExperience"></span> años</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mt-3" id="commentsCard">
+        <div class="card-body">
+          <h6 class="card-title text-muted">Comentarios Adicionales</h6>
+          <p class="mb-0" id="userComments"></p>
+        </div>
+      </div>
+      
+      <div class="card mt-3">
+        <div class="card-body">
+          <h6 class="card-title text-muted">Fecha de Registro</h6>
+          <p class="mb-0" id="registrationDate"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-warning">🦦 Tecno Chiguires</h5>
+        <p class="mb-2">Estudiantes de PNF INFORMÁTICA</p>
+        <p class="mb-0">Universidad Nacional Experimental de Telecomunicaciones e Informática (UNETI)</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <h6 class="text-warning">Desarrolladores:</h6>
+        <p class="mb-1">Roiner Martinez &middot; Benjamin Dumont</p>
+        <p class="mb-1">Mariangel Ortiz &middot; Laura Linares</p>
+        <small class="text-warning">&copy; 2024 Tecno Chiguires. Proyecto Programación.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Firebase Scripts -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUWnr84FZaFOsfD59JxEfl_RUXYq-1vec",
+    authDomain: "tecnochiguires.firebaseapp.com",
+    projectId: "tecnochiguires",
+    storageBucket: "tecnochiguires.firebasestorage.app",
+    messagingSenderId: "519894458196",
+    appId: "1:519894458196:web:7ae20e53096cc248dfb2c1",
+    measurementId: "G-3CLH3104V3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // Specialty mapping for better display
+  const specialtyMap = {
+    'electronica': 'Electrónica y Telecomunicaciones',
+    'informatica': 'Informática y Sistemas',
+    'redes': 'Redes y Comunicaciones',
+    'mantenimiento': 'Mantenimiento de Equipos',
+    'soporte': 'Soporte Técnico General'
+  };
+
+  function showError(message) {
+    const loadingState = document.getElementById('loadingState');
+    const errorState = document.getElementById('errorState');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    loadingState.style.display = 'none';
+    errorMessage.textContent = message;
+    errorState.style.display = 'block';
+  }
+
+  function displayUserStatus(approved) {
+    const statusContainer = document.getElementById('statusContainer');
+    
+    if (approved) {
+      // User is approved
+      statusContainer.innerHTML = `
+        <div class="text-center status-approved p-4 rounded mb-4">
+          <div class="success-icon">✅</div>
+          <h2 class="text-success fw-bold">¡Felicitaciones!</h2>
+          <h4 class="text-success mb-3">Has sido aceptado en el equipo Tecno Chiguires</h4>
+          <p class="text-success-emphasis">Bienvenido oficial al equipo. Pronto nos pondremos en contacto contigo con más detalles.</p>
+          <div class="mt-4">
+            <img src="img/chiguire_exito.png" alt="Chiguire de Éxito" class="img-fluid rounded" style="max-width: 300px; height: auto;" onerror="this.style.display='none'">
+          </div>
+        </div>
+      `;
+    } else {
+      // User is pending approval
+      statusContainer.innerHTML = `
+        <div class="text-center status-pending p-4 rounded mb-4">
+          <div class="pending-icon">⏳</div>
+          <h2 class="text-warning fw-bold">Registro Exitoso</h2>
+          <h4 class="text-warning mb-3">Tu solicitud está siendo revisada</h4>
+          <p class="text-warning-emphasis">Hemos recibido tu información correctamente. Nuestro equipo está revisando tu solicitud para unirte a Tecno Chiguires.</p>
+          <p class="text-warning-emphasis mb-0"><strong>Te notificaremos por correo electrónico cuando hayamos tomado una decisión.</strong></p>
+        </div>
+      `;
+    }
+  }
+
+  async function loadUserData(user) {
+    try {
+      console.log('Loading user data for:', user.uid);
+      
+      // Get user data from Firestore
+      const userDoc = await getDoc(doc(db, 'usuarios', user.uid));
+      
+      if (userDoc.exists()) {
+        console.log('User document found');
+        const userData = userDoc.data();
+        console.log('User data:', userData);
+        
+        // Populate user data
+        document.getElementById('userName').textContent = userData.nombre || 'No especificado';
+        document.getElementById('userEmail').textContent = userData.email || user.email;
+        document.getElementById('userPhone').textContent = userData.telefono || 'No especificado';
+        document.getElementById('userSpecialty').textContent = specialtyMap[userData.especialidad] || userData.especialidad || 'No especificado';
+        document.getElementById('userExperience').textContent = userData.experiencia || '0';
+        
+        // Handle comments
+        const commentsElement = document.getElementById('userComments');
+        const commentsCard = document.getElementById('commentsCard');
+        if (userData.mensaje && userData.mensaje.trim()) {
+          commentsElement.textContent = userData.mensaje;
+        } else {
+          commentsCard.style.display = 'none';
+        }
+        
+        // Format registration date
+        const registrationDate = userData.fechaRegistro ? 
+          new Date(userData.fechaRegistro).toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          }) : 'No disponible';
+        document.getElementById('registrationDate').textContent = registrationDate;
+        
+        // Display status based on approval (default to false if not set)
+        displayUserStatus(userData.approved || false);
+        
+        // Show dashboard
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('userDashboard').style.display = 'block';
+        
+      } else {
+        console.log('User document not found, redirecting to registration');
+        // User document doesn't exist, redirect to registration
+        window.location.href = 'formulario.html';
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      showError('Error al cargar la información del usuario: ' + error.message);
+    }
+  }
+
+  // Wait for DOM to be ready before setting up auth listener
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up auth listener');
+    
+// Set up logout functionality
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', async () => {
+        try {
+          await signOut(auth);
+          window.location.href = 'index.html';
+        } catch (error) {
+          console.error('Error signing out:', error);
+          // Replace alert with custom modal if needed, for now keep as is per user instruction to maintain existing functionality.
+          alert('Error al cerrar sesión');
+        }
+      });
+    }
+
+    // NEW: Auth button logic
+    const authBtn = document.getElementById('authBtn');
+    if (authBtn) {
+      authBtn.addEventListener('click', () => {
+        // Check current user state directly from the auth object
+        if (auth.currentUser) {
+          window.location.href = 'usuario.html';
+        } else {
+          window.location.href = 'formulario.html';
+        }
+      });
+    }
+
+    // Existing: Set up auth state listener for page load (keep existing)
+    onAuthStateChanged(auth, async (user) => {
+      console.log('Auth state changed:', user ? user.uid : 'No user');
+      
+      if (user) {
+        // User is authenticated, load their data
+        await loadUserData(user);
+      } else {
+        console.log('User not authenticated, redirecting to login');
+        // User not authenticated, redirect to login
+        window.location.href = 'login.html';
+      }
+    });
+  });
+</script>
+</body>
+</html>

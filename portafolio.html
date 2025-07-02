@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Tecno Chiguires</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { 
+      background: linear-gradient(135deg, #667eea 0%,rgb(192, 224, 111) 100%);
+      min-height: 100vh;
+    }
+    .portfolio-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+    }
+    .badge-custom {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      Tecno Chiguires
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="index.html">🏠 Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="portafolio.html">💼 Portafolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="sobre_nosotros.html">👥 Sobre Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <button id="authBtn" class="btn btn-warning fw-semibold ms-md-3">Registro/Inicio Sesión</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  <!-- Header del Portafolio -->
+  <div class="text-center mb-5">
+    <img src="img/chiguireinicio.jpg" 
+         alt="Chiguire Ingeniero" 
+         class="rounded-circle mb-3 shadow-lg" 
+         width="120" height="120" 
+         style="object-fit: cover;">
+    <h1 class="display-4 text-white fw-bold mb-3">💼 Nuestro Portafolio</h1>
+    <p class="lead text-white">Proyectos realizados por el equipo Tecno Chiguires</p>
+  </div>
+
+  <!-- Proyecto Principal -->
+  <div class="portfolio-card shadow-lg p-0 mb-5">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="img/cebit.jpg" 
+             alt="CEBIT Liceo Pedro Emilio Coll" 
+             class="img-fluid h-100 w-100 rounded-start" 
+             style="object-fit: cover; min-height: 400px;">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body p-5">
+          <div class="mb-3">
+            <span class="badge bg-primary badge-custom">🏫 Proyecto Educativo</span>
+            <span class="badge bg-success badge-custom">✅ Completado</span>
+          </div>
+          
+          <h2 class="card-title text-primary mb-4">
+            🔧 Servicio Técnico en Liceo Pedro Emilio Coll
+          </h2>
+          
+          <div class="mb-4">
+            <h5 class="text-secondary">📋 Descripción del Proyecto:</h5>
+            <p class="card-text">
+              Implementación completa de servicio técnico especializado en el Liceo Pedro Emilio Coll, 
+              incluyendo mantenimiento de equipos informáticos, reparación de sistemas, y soporte técnico.
+            </p>
+          </div>
+
+          <div class="mb-4">
+            <h5 class="text-secondary">🎯 Objetivos Alcanzados:</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">✅ Mantenimiento de 40+ computadoras en el Plantel</li>
+              <li class="mb-2">✅ Instalación y configuración de software</li>
+              <li class="mb-2">✅ Reparación de equipos</li>
+              <li class="mb-2">✅ Capacitación técnica a docentes</li>
+              <li class="mb-2">✅ Implementación de sistema de respaldo</li>
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h5 class="text-secondary">🔧 Tecnologías Utilizadas:</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-info">Windows 10/11</span>
+              <span class="badge bg-warning text-dark">Office 365</span>
+              <span class="badge bg-success">Antivirus</span>
+              <span class="badge bg-danger">Hardware</span>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h5 class="text-secondary">👥 Equipo Responsable:</h5>
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <img src="img/chiguire_roiner.jpg" 
+                       alt="Roiner" class="rounded-circle me-2" width="30" height="30" style="object-fit: cover;">
+                  <small class="fw-semibold">Roiner Martinez</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <img src="img/chiguire_benjamin.jpg" 
+                       alt="Benjamin" class="rounded-circle me-2" width="30" height="30" style="object-fit: cover;">
+                  <small class="fw-semibold">Benjamin Dumont</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <img src="img/chiguire_mariangel.jpg" 
+                       alt="Mariangel" class="rounded-circle me-2" width="30" height="30" style="object-fit: cover;">
+                  <small class="fw-semibold">Mariangel Ortiz</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-top pt-3">
+            <div class="row text-center">
+              <div class="col-4">
+                <h6 class="text-primary mb-1">📅 Duración</h6>
+                <small class="text-muted">3 meses</small>
+              </div>
+              <div class="col-4">
+                <h6 class="text-success mb-1">💻 Equipos</h6>
+                <small class="text-muted">40+ PCs</small>
+              </div>
+              <div class="col-4">
+                <h6 class="text-warning mb-1">👨‍🎓 Beneficiarios</h6>
+                <small class="text-muted">200+ estudiantes</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Llamada a la acción -->
+  <div class="text-center bg-white p-5 rounded-3 shadow">
+    <h3 class="text-primary mb-3">¿Quieres Formar parte de Tecno Chiguires?</h3>
+    <p class="lead mb-4">
+      Nuestro equipo de chiguires está listo para recibirte
+      con los brazos abiertos.
+    </p>
+    <img src="img/chiguireenmoto.png"
+     alt="Texto alternativo"
+     class="rounded-circle"
+     width="80" height="80"
+     style="object-fit: contain;">
+    <p class="mb-4">
+
+<button id="empiezaAhoraBtn" class="btn btn-success btn-lg">
+       ¡Empieza ahora!
+    </button>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-light mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-warning">🦦 Tecno Chiguires</h5>
+        <p class="mb-2">Estudiantes de PNF INFORMÁTICA</p>
+        <p class="mb-0">Universidad Nacional Experimental de Telecomunicaciones e Informática (UNETI)</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <h6 class="text-warning">Desarrolladores:</h6>
+        <p class="mb-1">Roiner Martinez &middot; Benjamin Dumont</p>
+        <p class="mb-1">Mariangel Ortiz &middot; Laura Linares</p>
+        <small class="text-warning">&copy; 2024 Tecno Chiguires. Proyecto Programación.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Firebase Scripts for Auth Button -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+  // Firebase configuration (ensure this is consistent across all files)
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUWnr84FZaFOsfD59JxEfl_RUXYq-1vec",
+    authDomain: "tecnochiguires.firebaseapp.com",
+    projectId: "tecnochiguires",
+    storageBucket: "tecnochiguires.firebasestorage.app",
+    messagingSenderId: "519894458196",
+    appId: "1:519894458196:web:7ae20e53096cc248dfb2c1",
+    measurementId: "G-3CLH3104V3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const authBtn = document.getElementById('authBtn');
+    if (authBtn) {
+      authBtn.addEventListener('click', () => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            // User is signed in, redirect to user dashboard
+            window.location.href = 'usuario.html';
+          } else {
+            // No user is signed in, redirect to registration
+            window.location.href = 'formulario.html';
+          }
+        });
+      });
+    }
+    const empiezaAhoraButton = document.getElementById('empiezaAhoraBtn');
+    if (empiezaAhoraButton) {
+        empiezaAhoraButton.addEventListener('click', () => {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, redirect to user dashboard
+                    window.location.href = 'usuario.html';
+                } else {
+                    // No user is signed in, redirect to registration
+                    window.location.href = 'formulario.html';
+                }
+            });
+        });
+    }
+  });
+</script>
+
+</body>
+</html>

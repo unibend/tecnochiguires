@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros - Tecno Chiguire</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .team-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+      border: none;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      Tecno Chiguires
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="index.html">🏠 Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="portafolio.html">💼 Portafolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="sobre_nosotros.html">👥 Sobre Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <button id="authBtn" class="btn btn-warning fw-semibold ms-md-3">Registro/Inicio Sesión</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  <!-- Header -->
+  <div class="text-center mb-5">
+    <img src="img/chiguireinicio.jpg" 
+         alt="Grupo de Chiguires Amigos" 
+         class="rounded-circle mb-3 shadow-lg" 
+         width="120" height="120" 
+         style="object-fit: cover;">
+    <h1 class="display-4 text-white fw-bold mb-3"> Conoce a los integrantes de Tecno Chiguires </h1>
+    <p class="lead text-white">Estudiantes de PNF Informática - UNETI</p>
+  </div>
+
+  <!-- Información de UNETI -->
+  <div class="team-card shadow-lg p-4 mb-5">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center">
+        <img src="img/logouneti.jpg" 
+             alt="UNETI Universidad" 
+             class="img-fluid rounded shadow" 
+             style="max-height: 150px; object-fit: cover;">
+      </div>
+      <div class="col-md-9">
+        <h2 class="text-primary mb-3"> Universidad Nacional Experimental de Telecomunicaciones e Informática</h2>
+        <h4 class="text-secondary mb-3">UNETI</h4>
+        <p class="mb-3">
+          Formando profesionales técnicos especializados en telecomunicaciones, informática y servicio técnico. 
+        </p>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <h6 class="text-primary">📚 Carrera</h6>
+            <p class="small">Tecnologica</p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="text-primary">🔧 Especialización</h6>
+            <p class="small">PNF en Informática</p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="text-primary">🏆 Misión</h6>
+            <p class="small">Excelencia Técnica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Equipo de Desarrolladores -->
+<h2 class="text-center text-white mb-5">👥 Nuestro Equipo de Chiguires</h2>
+
+<div class="row g-4 mb-5">
+  <!-- Roiner Martinez -->
+  <div class="col-md-6 col-lg-3">
+    <div class="team-card shadow-lg p-4 text-center h-100">
+      <img src="img/chiguire_roiner.jpg" alt="Roiner Martinez - Chuiguire Técnico" class="profile-img rounded-circle mb-3">
+      <h4 class="text-primary mb-2">Roiner Martinez</h4>
+      <p class="text-muted mb-3">🔧 Servicio Técnico</p>
+      <div class="mb-3">
+        <span class="badge bg-primary">🎓 UNETI</span>
+        <span class="badge bg-info">Programador</span>
+      </div>
+      <p class="small text-muted mb-3">
+        Experto en diagnóstico y reparación de equipos. Le encantan los desafíos técnicos 
+        y siempre encuentra soluciones creativas.
+      </p>
+      <div class="small">
+        <p class="mb-1"><strong>🎯 Especialidades:</strong></p>
+        <p class="text-muted">Reparación de PCs, Diagnóstico de hardware, Mantenimiento preventivo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benjamin Dumont -->
+  <div class="col-md-6 col-lg-3">
+    <div class="team-card shadow-lg p-4 text-center h-100">
+      <img src="img/chiguire_benjamin.jpg" alt="Benjamin Dumont - Chuiguire Técnico" class="profile-img rounded-circle mb-3">
+      <h4 class="text-primary mb-2">Benjamin Dumont</h4>
+      <p class="text-muted mb-3">💻 Servicio Técnico</p>
+      <div class="mb-3">
+        <span class="badge bg-primary">🎓 UNETI</span>
+        <span class="badge bg-info">Programador </span>
+      </div>
+      <p class="small text-muted mb-3">
+        Apasionado por la programación y sistemas. Su enfoque metódico y atención 
+        al detalle garantizan soluciones robustas.
+      </p>
+      <div class="small">
+        <p class="mb-1"><strong>🎯 Especialidades:</strong></p>
+        <p class="text-muted">Instalación de software, Configuración de sistemas, Programación</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mariangel Ortiz -->
+  <div class="col-md-6 col-lg-3">
+    <div class="team-card shadow-lg p-4 text-center h-100">
+      <img src="img/chiguire_mariangel.jpg" alt="Mariangel Ortiz - Chuiguire Técnica" class="profile-img rounded-circle mb-3">
+      <h4 class="text-primary mb-2">Mariangel Ortiz</h4>
+      <p class="text-muted mb-3">🌐 Diseñadora Grafica</p>
+      <div class="mb-3">
+        <span class="badge bg-primary">🎓 UNETI</span>
+        <span class="badge bg-info"> Programadora </span>
+      </div>
+      <p class="small text-muted mb-3">
+        Experta en configuración y mantenimiento de redes. Su capacidad de análisis 
+        y resolución de problemas es excepcional.
+      </p>
+      <div class="small">
+        <p class="mb-1"><strong>🎯 Especialidades:</strong></p>
+        <p class="text-muted">Configuración de redes, Diseño de páginas, Conectividad</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Laura Linares -->
+  <div class="col-md-6 col-lg-3">
+    <div class="team-card shadow-lg p-4 text-center h-100">
+      <img src="img/chiguire_laura.jpg" alt="Laura Linares - Chuiguire Técnica" class="profile-img rounded-circle mb-3">
+      <h4 class="text-primary mb-2">Laura Linares</h4>
+      <p class="text-muted mb-3">👥 Servicio Técnico</p>
+      <div class="mb-3">
+        <span class="badge bg-primary">🎓 UNETI</span>
+        <span class="badge bg-info"> Programadora</span>
+      </div>
+      <p class="small text-muted mb-3">
+        Líder natural con excelentes habilidades de comunicación. Coordina equipos 
+        y garantiza la calidad en cada proyecto.
+      </p>
+      <div class="small">
+        <p class="mb-1"><strong>🎯 Especialidades:</strong></p>
+        <p class="text-muted">Gestión de proyectos, Soporte al cliente, Control de calidad</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Historia del Grupo -->
+  <div class="team-card shadow-lg p-5 mb-5">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="https://pub-cdn.sider.ai/u/U0AWH6AWJOL/web-coder/6862f14e235f86442e358e83/resource/8376897b-3098-4fce-b3c8-696a23e9999d.jpg" 
+             alt="Trabajo en Equipo Tecno Chiguires" 
+             class="img-fluid rounded-circle shadow-lg" 
+             width="200" height="200" 
+             style="object-fit: cover;">
+      </div>
+      <div class="col-md-8">
+        <h3 class="text-primary mb-4"> ¿Por qué "Chiguires"?</h3>
+        <p class="mb-3">
+          Los chuiguires (capibaras) son animales únicos de Venezuela, conocidos por su tranquilidad, 
+          inteligencia y capacidad de trabajo en equipo. Al igual que estos nobles animales, nuestro 
+          grupo se caracteriza por:
+        </p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">🤝 <strong>Trabajo colaborativo:</strong> Siempre juntos hacia el objetivo</li>
+          <li class="mb-2">😌 <strong>Calma bajo presión:</strong> Mantenemos la serenidad ante los desafíos</li>
+          <li class="mb-2">🧠 <strong>Inteligencia práctica:</strong> Soluciones efectivas y simples</li>
+          <li class="mb-2">🦫<strong>Orgullo venezolano:</strong> Representando lo mejor de nuestro país</li>
+        </ul>
+        <p class="text-muted">
+          La informática es el arte de transformar la realidad a través de la lógica y la innovación.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<!-- Valores del Equipo -->
+<div class="team-card shadow-lg p-4 mb-5">
+  <h3 class="text-center text-primary mb-4">Nuestros Valores</h3>
+  <div class="row g-4">
+    <div class="col-md-3 text-center">
+      <i class="bi bi-award-fill text-success fs-1 mb-2"></i>
+      <h5 class="text-success">🏆 Excelencia</h5>
+      <p class="small text-muted">Siempre buscamos la máxima calidad en nuestro trabajo.</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <i class="bi bi-people-fill text-success fs-1 mb-2"></i>
+      <h5 class="text-success">🤝 Servicio</h5>
+      <p class="small text-muted">Dedicados a brindar el mejor soporte técnico a nuestros clientes.</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <i class="bi bi-lightbulb-fill text-info fs-1 mb-2"></i>
+      <h5 class="text-success">💡 Innovación</h5>
+      <p class="small text-muted">Aplicamos soluciones creativas y tecnología de vanguardia.</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <i class="bi bi-shield-check text-warning fs-1 mb-2"></i>
+      <h5 class="text-success">⭐ Integridad</h5>
+      <p class="small text-muted">Actuamos con honestidad y transparencia en cada proyecto.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contacto -->
+<div class="text-center">
+  <div class="team-card shadow-lg p-5">
+    <i class="bi bi-envelope-paper-fill text-primary fs-1 mb-3"></i>
+    <h3 class="text-primary mb-3"> ¿Quieres conocer más sobre Tecno Chiguires?</h3>
+    <p class="mb-4">
+      Estamos siempre dispuestos a conversar sobre proyectos técnicos y 
+      oportunidades de colaboración.
+    </p>
+    <div class="mb-3">
+      <p class="mb-2">📧 <strong>Email:</strong> Tecnochiguires@uneti.edu.ve</p>
+      <p class="mb-2">🎓 <strong>Ubicación:</strong> Caracas, Venezuela</p>
+      <p class="mb-0">🔧 <strong>Especialidad:</strong> Informática</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-light mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-warning">🦦 Tecno Chiguires</h5>
+        <p class="mb-2">Estudiantes de PNF INFORMÁTICA</p>
+        <p class="mb-0">Universidad Nacional Experimental de Telecomunicaciones e Informática (UNETI)</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <h6 class="text-warning">Desarrolladores:</h6>
+        <p class="mb-1">Roiner Martinez &middot; Benjamin Dumont</p>
+        <p class="mb-1">Mariangel Ortiz &middot; Laura Linares</p>
+        <small class="text-warning">&copy; 2024 Tecno Chiguires. Proyecto Programación.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Firebase Scripts for Auth Button -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+  // Firebase configuration (ensure this is consistent across all files)
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUWnr84FZaFOsfD59JxEfl_RUXYq-1vec",
+    authDomain: "tecnochiguires.firebaseapp.com",
+    projectId: "tecnochiguires",
+    storageBucket: "tecnochiguires.firebasestorage.app",
+    messagingSenderId: "519894458196",
+    appId: "1:519894458196:web:7ae20e53096cc248dfb2c1",
+    measurementId: "G-3CLH3104V3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const authBtn = document.getElementById('authBtn');
+    if (authBtn) {
+      authBtn.addEventListener('click', () => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            // User is signed in, redirect to user dashboard
+            window.location.href = 'usuario.html';
+          } else {
+            // No user is signed in, redirect to registration
+            window.location.href = 'formulario.html';
+          }
+        });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
+</body>
+</html>
