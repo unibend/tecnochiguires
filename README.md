@@ -54,9 +54,6 @@ El código JavaScript está incluido directamente en los archivos HTML, pero est
 Accede al sitio aquí:  
 🔗 [https://tecnochiguires.vercel.app/](https://tecnochiguires.vercel.app/)
 
-Para ver el código fuente, navega a la sección **Sobre Nosotros** y haz clic en el enlace `Ver código fuente en GitHub`.
-
-En caso de que la página no esté disponible, también puedes [descargar el código desde esta carpeta de Google Drive](#) _(reemplaza con el enlace)_.
 
 ---
 
@@ -64,6 +61,7 @@ En caso de que la página no esté disponible, también puedes [descargar el có
 
 Para correr la página en tu máquina local:
 
+1. Descarga el código desde GitHub, o desde [esta carpeta de google drive](https://drive.google.com/drive/folders/1GGcufaJHn35b0NJ2PSzf3i-153pFQ-VQ?usp=sharing)
 1. Abre una terminal y navega a la carpeta del proyecto.
 2. Ejecuta el siguiente comando:
 
