@@ -67,3 +67,22 @@ Para correr la página en tu máquina local:
 
 ```bash
 python -m http.server
+```
+---
+## Actualización 2025-07-03
+### Nueva Funcionalidad: Recuperación de Contraseña
+Se ha agregado una nueva característica de **recuperación de contraseña** para mejorar la experiencia del usuario:
+
+#### Cambios Implementados:
+- **Página de Login Actualizada**: Se agregó un enlace "¿Olvidaste tu contraseña?" debajo del enlace de registro.
+- **Nueva Página de Recuperación**: Se creó `reset-password.html` con diseño completamente consistente con el resto del sitio.
+- **Integración con Firebase**: Implementación de la función `sendPasswordResetEmail()` para envío automático de correos de recuperación.
+
+#### Funcionalidad:
+1. El usuario hace clic en "¿Olvidaste tu contraseña?" desde la página de login.
+2. Se redirige a la página de recuperación donde ingresa su correo electrónico.
+3. Firebase envía automáticamente un correo con instrucciones para restablecer la contraseña.
+4. El sistema maneja errores comunes (usuario no encontrado, correo inválido, etc.).
+5. Se muestran mensajes de confirmación y error apropiados.
+
+
